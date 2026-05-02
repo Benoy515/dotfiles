@@ -1,0 +1,16 @@
+[user]
+	name = Abhay Benoy
+	email = abhihome111@gmail.com
+[http]
+	version = HTTP/1.1
+	postBuffer = 157286400
+[core]
+	editor = code --wait
+[merge]
+	tool = vscode
+[mergetool "vscode"]
+	cmd = "code --wait "
+[diff]
+	tool = vscode
+[difftool "vscode"]
+	cmd = "code --wait --diff  "
