@@ -9,6 +9,7 @@ alias add-alias='nvim ~/.config/zsh/aliases.zsh'
 # Terminal command improvements
 alias la='ls -a'
 alias cd='z'
+alias ..='cd ..'
 
 # Git aliases
 alias gs='git status'
