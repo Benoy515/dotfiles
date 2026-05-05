@@ -8,6 +8,9 @@ source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 # Aliases
 source ~/.config/zsh/aliases.zsh
 
+# Chalk-specific config
+source ~/.config/zsh/chalk.zsh
+
 # Zoxide (must be after PATH setup)
 eval "$(zoxide init zsh)"
 

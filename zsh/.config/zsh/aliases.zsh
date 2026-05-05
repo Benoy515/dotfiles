@@ -23,6 +23,9 @@ alias gp='git push'
 alias cr='cargo run'
 alias ct='cargo test'
 
+# Python venv
+alias va='source .venv/bin/activate'
+
 # Personal CLI tools
 alias alist='/Users/abhaybenoy/Main-Files/Hacking/Rust_Projects/alist/target/release/alist'
 
