@@ -4,6 +4,7 @@ alias zedit='nvim ~/.zshrc'
 alias gedit='nvim ~/.config/ghostty/config'
 alias tedit='nvim ~/.tmux.conf'
 alias tource='tmux source ~/.tmux.conf'
+alias add-alias='nvim ~/.config/zsh/aliases.zsh'
 
 # Terminal command improvements
 alias la='ls -a'

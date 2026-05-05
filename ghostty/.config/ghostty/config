@@ -7,3 +7,4 @@ background-opacity = 0.95
 
 custom-shader = shaders/cursor_warp.glsl
 
+theme = "Rapture"
