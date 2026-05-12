@@ -1,0 +1,45 @@
+layout {
+    pane
+    pane size=1 borderless=true {
+        plugin location="file:~/.config/zellij/plugins/zjstatus.wasm" {
+            format_left   "{mode} #[fg=default]{tabs}"
+            format_right  "#[fg=#A6E3A1]{command_git_branch} #[fg=#F9E2AF]{datetime}"
+            format_space  ""
+
+            border_enabled  "false"
+            border_char     "─"
+            border_format   "#[fg=#6C7086]{char}"
+            border_position "top"
+
+            mode_normal        "#[bg=#89B4FA,fg=#1E1E2E,bold] NORMAL "
+            mode_locked        "#[bg=#F38BA8,fg=#1E1E2E,bold] LOCKED "
+            mode_resize        "#[bg=#F9E2AF,fg=#1E1E2E,bold] RESIZE "
+            mode_pane          "#[bg=#A6E3A1,fg=#1E1E2E,bold] PANE "
+            mode_tab           "#[bg=#CBA6F7,fg=#1E1E2E,bold] TAB "
+            mode_scroll        "#[bg=#94E2D5,fg=#1E1E2E,bold] SCROLL "
+            mode_search        "#[bg=#94E2D5,fg=#1E1E2E,bold] SEARCH "
+            mode_entersearch   "#[bg=#94E2D5,fg=#1E1E2E,bold] ENTER-SEARCH "
+            mode_renametab     "#[bg=#CBA6F7,fg=#1E1E2E,bold] RENAME-TAB "
+            mode_renamepane    "#[bg=#A6E3A1,fg=#1E1E2E,bold] RENAME-PANE "
+            mode_session       "#[bg=#F5C2E7,fg=#1E1E2E,bold] SESSION "
+            mode_move          "#[bg=#FAB387,fg=#1E1E2E,bold] MOVE "
+            mode_prompt        "#[bg=#F5C2E7,fg=#1E1E2E,bold] PROMPT "
+            mode_tmux          "#[bg=#F5C2E7,fg=#1E1E2E,bold] TMUX "
+
+            tab_normal              "#[fg=#6C7086,bg=#1E1E2E] {index}:{name} "
+            tab_normal_fullscreen   "#[fg=#6C7086,bg=#1E1E2E] {index}:{name} [] "
+            tab_normal_sync         "#[fg=#6C7086,bg=#1E1E2E] {index}:{name} <> "
+            tab_active              "#[fg=#1a2d40,bg=#b08bff,bold] {index}:{name} "
+            tab_active_fullscreen   "#[fg=#1a2d40,bg=#b08bff,bold] {index}:{name} [] "
+            tab_active_sync         "#[fg=#1a2d40,bg=#b08bff,bold] {index}:{name} <> "
+
+            command_git_branch_command     "git rev-parse --abbrev-ref HEAD"
+            command_git_branch_format      " {stdout}"
+            command_git_branch_interval    "10"
+
+            datetime          "{format}"
+            datetime_format   "%Y-%m-%d %H:%M"
+            datetime_timezone "America/Los_Angeles"
+        }
+    }
+}

@@ -1,0 +1,84 @@
+format = """
+[](fg:cyan)\
+$directory\
+$git_branch\
+$python\
+$cmd_duration\
+$line_break\
+${custom.venv}\
+$character"""
+
+right_format = """$time"""
+
+add_newline = true
+
+palette = "rapture"
+
+[palettes.rapture]
+bg        = "#1a2d40"
+fg        = "#c0c9e5"
+cyan      = "#64e0ff"
+blue      = "#6c9bf5"
+muted     = "#304b66"
+red       = "#ff6b81"
+green     = "#7ce38b"
+yellow    = "#ffcb6b"
+
+[directory]
+style = "bold cyan"
+truncation_length = 3
+truncate_to_repo = true
+truncation_symbol = "…/"
+read_only = " "
+format = "[ $path]($style)[$read_only]($style) "
+
+[git_branch]
+symbol = "󰊢 "
+style = "blue"
+format = "on [$symbol$branch]($style) "
+
+[git_status]
+disabled = true
+
+[python]
+symbol = " "
+style = "yellow"
+format = '[${symbol}${pyenv_prefix}(${version})]($style) '
+
+[custom.venv]
+description = "Active Python virtualenv"
+when = '''test -n "$VIRTUAL_ENV"'''
+command = '''printf '%s' "${VIRTUAL_ENV_PROMPT:-$(basename "$VIRTUAL_ENV")}"'''
+style = "yellow"
+format = "[$output ]($style)"
+shell = ["sh", "--norc"]
+
+[cmd_duration]
+min_time = 2_000
+style = "muted"
+format = "[took $duration]($style) "
+
+[character]
+success_symbol = "[❯](bold cyan)"
+error_symbol = "[❯](bold red)"
+vimcmd_symbol = "[❮](bold blue)"
+
+[time]
+disabled = false
+time_format = "%H:%M"
+style = "muted"
+format = "[$time]($style)"
+
+# --- Disable noise ---
+[package]
+disabled = true
+[aws]
+disabled = true
+[gcloud]
+disabled = true
+[nodejs]
+disabled = true
+[golang]
+disabled = true
+[rust]
+disabled = true
