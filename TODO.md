@@ -7,8 +7,8 @@ Ongoing work to sharpen terminal usage. Tackle one chunk at a time.
 ## Repo hygiene *(do first — unblocks everything else)*
 
 - [x] Add root `.gitignore` — exclude `tmux/.config/tmux/plugins/`
-- [ ] Add a `Brewfile` so installed packages are tracked and reproducible
-- [ ] Decide on a bootstrap script (`./install.sh`) that runs `brew bundle`, `stow */`, and TPM install — *or* document the manual steps in README
+- [x] Add a `Brewfile` so installed packages are tracked and reproducible
+- [x] Decide on a bootstrap script (`./install.sh`) that runs `brew bundle`, `stow */`, and TPM install — *or* document the manual steps in README
 
 ---
 

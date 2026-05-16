@@ -2,7 +2,15 @@
 
 # PATH
 export PATH="$HOME/Development/chalk/cli:$PATH"
-
+chalklocal () {
+  (
+    set -e
+    pushd ~/Development/chalk/cli
+    GOOS=darwin GOARCH=arm64 go build -o chalk
+    popd
+    ~/Development/chalk/cli/chalk "$@"
+  )
+}
 # vcpkg
 export VCPKG_ROOT="$HOME/vcpkg"
 

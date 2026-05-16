@@ -15,7 +15,7 @@ keybinds clear-defaults=true {
         bind "-" { NewPane "down";  SwitchToMode "normal"; }
         bind "%" { NewPane "right"; SwitchToMode "normal"; }
         bind "\"" { NewPane "down"; SwitchToMode "normal"; }
-        bind "S" { NewPane "stacked"; SwitchToMode "normal"; }
+        bind "s" { NewPane "stacked"; SwitchToMode "normal"; }
 
         // Pane focus / management
         bind "h" { MoveFocus "left";  SwitchToMode "normal"; }
@@ -59,7 +59,7 @@ keybinds clear-defaults=true {
 
         // Sessions
         bind "d" { Detach; }
-        bind "s" {
+        bind "S" {
             LaunchOrFocusPlugin "session-manager" {
                 floating true
                 move_to_focused_tab true

@@ -5,19 +5,20 @@ Personal config, managed with [GNU Stow](https://www.gnu.org/software/stow/).
 ## New machine setup
 
 ```sh
-# 1. Install Homebrew, then dependencies
-brew install stow zoxide starship fzf fd bat \
-             zsh-autosuggestions zsh-syntax-highlighting
-
-# 2. Clone and stow
 git clone <this-repo> ~/.dotfiles
-cd ~/.dotfiles
-stow ghostty git karabiner starship tmux zed zsh
-
-# 3. Install tmux plugins (TPM)
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-~/.tmux/plugins/tpm/bin/install_plugins
+~/.dotfiles/bootstrap.sh
 ```
+
+The bootstrap script is idempotent — re-run any time to repair / refresh state. It:
+
+1. Installs Homebrew (if missing)
+2. Runs `brew bundle` against [`Brewfile`](./Brewfile)
+3. `stow`s every package directory (ghostty, git, karabiner, nvim, starship, tmux, zed, zellij, zsh)
+4. Clones TPM and installs tmux plugins
+5. Wires fzf shell keybindings (`Ctrl+R`, `Ctrl+T`, `Alt+C`)
+6. Warms up nvim plugins via headless launch (vim.pack fetches on first run)
+
+Open a new shell afterward to pick up zsh / starship / zoxide.
 
 ## Packages
 
