@@ -1,8 +1,9 @@
 # Chalk-specific environment, aliases, and helpers
+alias add-chalk-alias='nvim ~/.dotfiles/zsh/.config/chalk.zsh'
 
 # PATH
 export PATH="$HOME/Development/chalk/cli:$PATH"
-chalklocal () {
+chalk () {
   (
     set -e
     pushd ~/Development/chalk/cli
@@ -25,7 +26,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 # Aliases
-alias chalkdev='bash ~/Development/scripts/dev_tmux.sh'
+alias chalkdev='bash ~/Development/scripts/dev_zellij.sh'
 
 # Run the chalk engine locally against a target chalk project directory.
 # Usage: enginelocal <PROJECT_DIR>

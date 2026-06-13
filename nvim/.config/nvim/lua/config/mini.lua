@@ -5,7 +5,25 @@ require("mini.pairs").setup()
 require("mini.comment").setup()
 require("mini.surround").setup()
 require("mini.move").setup()
-require("mini.statusline").setup({ use_icons = true })
+require("mini.statusline").setup({
+  use_icons = true,
+  content = {
+    active = function()
+      local mode, mode_hl = MiniStatusline.section_mode({ trunc_width = 120 })
+      local git = MiniStatusline.section_git({ trunc_width = 40 })
+      local diff = MiniStatusline.section_diff({ trunc_width = 75 })
+      local filename = MiniStatusline.section_filename({ trunc_width = 140 })
+
+      return MiniStatusline.combine_groups({
+        { hl = mode_hl, strings = { mode } },
+        { hl = "MiniStatuslineDevinfo", strings = { git, diff } },
+        "%<",
+        "%=",
+        { hl = "MiniStatuslineFilename", strings = { filename } },
+      })
+    end,
+  },
+})
 require("mini.animate").setup({
   cursor = { enable = false },
 })

@@ -33,6 +33,17 @@ autocmd("LspAttach", {
   end,
 })
 
+autocmd({ "InsertLeave", "TextChanged" }, {
+  group = augroup("user-autosave", { clear = true }),
+  callback = function(args)
+    local buf = args.buf
+    local bo = vim.bo[buf]
+    if bo.buftype ~= "" or not bo.modifiable or bo.readonly or not bo.modified then return end
+    if vim.api.nvim_buf_get_name(buf) == "" then return end
+    vim.api.nvim_buf_call(buf, function() vim.cmd("silent! write") end)
+  end,
+})
+
 autocmd("FileType", {
   group = augroup("user-quick-close", { clear = true }),
   pattern = { "help", "qf", "man", "lspinfo", "checkhealth" },

@@ -7,9 +7,19 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "project_panel": {
+    "dock": "left"
+  },
+  "outline_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
   "buffer_line_height": "standard",
   "buffer_font_weight": 400.0,
   "git_panel": {
+    "dock": "left",
     "tree_view": true
   },
   "agent_servers": {
@@ -43,6 +53,7 @@
   "agent_buffer_font_size": 14.0,
   "relative_line_numbers": "enabled",
   "agent": {
+    "dock": "right",
     "favorite_models": [
       {
         "provider": "anthropic",

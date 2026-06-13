@@ -17,12 +17,14 @@ alias md='mkdir'
 alias rd='rmdir'
 
 # Git aliases
+alias g='git'
 alias gs='git status'
 alias gaa='git add -A'
 alias gc='git commit -m'
 alias gac='git add -A && git commit -m'
 alias gca='git commit --amend'
 alias gp='git push'
+alias gb='git branch | fzf | xargs git switch'
 
 # Rust aliases
 alias cr='cargo run'
