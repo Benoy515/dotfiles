@@ -3,7 +3,7 @@ layout {
     pane size=1 borderless=true {
         plugin location="file:~/.config/zellij/plugins/zjstatus.wasm" {
             format_left   "{mode} #[fg=default]{tabs}"
-            format_right  "#[fg=#89DCEB]{command_pwd} #[fg=#A6E3A1]{command_git_branch} #[fg=#F9E2AF]{datetime}"
+            format_right  "#[fg=#A6E3A1]{command_git_branch} #[fg=#F9E2AF]{datetime}"
             format_space  ""
 
             border_enabled  "false"
@@ -36,10 +36,6 @@ layout {
             command_git_branch_command     "git rev-parse --abbrev-ref HEAD"
             command_git_branch_format      " {stdout}"
             command_git_branch_interval    "10"
-
-            command_pwd_command     "bash -c 'pwd | sed \"s|$HOME|~|\"'"
-            command_pwd_format      " {stdout}"
-            command_pwd_interval    "2"
 
             datetime          "{format}"
             datetime_format   "%Y-%m-%d %H:%M"
