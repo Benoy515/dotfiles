@@ -24,8 +24,14 @@ require("mini.statusline").setup({
     end,
   },
 })
-require("mini.animate").setup({
+local animate = require("mini.animate")
+local timing = animate.gen_timing.linear({ duration = 125, unit = "total" })
+animate.setup({
   cursor = { enable = false },
+  scroll = { timing = timing },
+  resize = { timing = timing },
+  open = { timing = timing },
+  close = { timing = timing },
 })
 
 require("mini.files").setup({

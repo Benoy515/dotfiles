@@ -31,8 +31,8 @@ vim.lsp.config("lua_ls", {
 
 })
 vim.lsp.config("chalk_lsp", {
-  cmd = vim.lsp.rpc.connect('127.0.0.1', 9949),
-  -- cmd = { '/Users/abhay/Development/chalk/chalk/chalk-rs/target/debug/chalk-lsp' },
+  -- cmd = vim.lsp.rpc.connect('127.0.0.1', 9949),
+  cmd = { '/Users/abhay/Development/chalk/chalk/chalk-rs/target/debug/chalk-lsp', 'lsp' },
   filetypes = { 'python' },
   root_markers = { 'chalk.yaml', 'chalk.yml' },
 })

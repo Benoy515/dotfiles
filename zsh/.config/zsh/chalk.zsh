@@ -1,5 +1,5 @@
 # Chalk-specific environment, aliases, and helpers
-alias add-chalk-alias='nvim ~/.dotfiles/zsh/.config/chalk.zsh'
+alias add-chalk-alias='nvim ~/.dotfiles/zsh/.config/zsh/chalk.zsh'
 
 # PATH
 export PATH="$HOME/Development/chalk/cli:$PATH"
