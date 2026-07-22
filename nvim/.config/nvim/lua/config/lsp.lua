@@ -30,13 +30,9 @@ vim.lsp.config("lua_ls", {
   },
 
 })
-vim.lsp.config("chalk_lsp", {
-  -- cmd = vim.lsp.rpc.connect('127.0.0.1', 9949),
-  cmd = { '/Users/abhay/Development/chalk/chalk/chalk-rs/target/debug/chalk-lsp', 'lsp' },
-  filetypes = { 'python' },
-  root_markers = { 'chalk.yaml', 'chalk.yml' },
-})
-vim.lsp.enable("chalk_lsp")
+-- chalk-nvim manages the chalk-lsp binary, activation, root detection, and
+-- detaching competing Python LSPs. Client name is still "chalk_lsp".
+require("chalk").setup()
 
 vim.keymap.set("n", "<leader>ll", function()
   local clients = vim.lsp.get_clients({ bufnr = 0 })
@@ -48,17 +44,6 @@ vim.keymap.set("n", "<leader>ll", function()
   vim.notify("LSP: " .. table.concat(names, ", "))
 end, { desc = "List active LSP clients" })
 
-local chalk_enabled = true
-vim.keymap.set("n", "<leader>lc", function()
-  chalk_enabled = not chalk_enabled
-  vim.lsp.enable("chalk_lsp", chalk_enabled)
-  if not chalk_enabled then
-    for _, c in ipairs(vim.lsp.get_clients({ name = "chalk_lsp" })) do
-      vim.lsp.stop_client(c.id)
-    end
-    vim.notify("chalk_lsp disabled")
-  else
-    vim.cmd("edit")
-    vim.notify("chalk_lsp enabled")
-  end
-end, { desc = "Toggle chalk_lsp" })
+vim.keymap.set("n", "<leader>lcr", "<cmd>ChalkLspRestart<cr>", { desc = "Restart chalk_lsp" })
+vim.keymap.set("n", "<leader>lcu", "<cmd>ChalkLspUpdate<cr>", { desc = "Update chalk_lsp" })
+vim.keymap.set("n", "<leader>lci", "<cmd>ChalkLspInfo<cr>", { desc = "chalk_lsp info" })

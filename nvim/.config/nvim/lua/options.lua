@@ -33,7 +33,10 @@ opt.wrap = false
 opt.linebreak = true
 
 opt.mouse = "a"
-opt.clipboard = "unnamedplus"
+-- Left empty on purpose: `unnamedplus` would route every register write
+-- (yanks AND deletes/changes) to the system clipboard. Instead we mirror only
+-- explicit yanks to `+` in config/yank.lua, so deletes/changes stay Vim-local.
+opt.clipboard = ""
 
 opt.completeopt = "menu,menuone,noselect,fuzzy,popup"
 

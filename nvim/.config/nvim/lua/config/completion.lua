@@ -12,5 +12,18 @@ vim.keymap.set("i", "<CR>", function()
   if vim.fn.pumvisible() == 1 then
     return vim.fn.complete_info({ "selected" }).selected ~= -1 and "<C-y>" or "<C-e><CR>"
   end
+  -- If the cursor sits directly between a matching bracket pair ({|}, [|], (|)),
+  -- expand into an indented empty line:
+  --   {|}  ->  {
+  --              |
+  --            }
+  local col = vim.fn.col(".")
+  local line = vim.api.nvim_get_current_line()
+  local before = line:sub(col - 1, col - 1)
+  local after = line:sub(col, col)
+  local closers = { ["{"] = "}", ["["] = "]", ["("] = ")" }
+  if closers[before] == after then
+    return "<CR><Esc>O"
+  end
   return "<CR>"
 end, { expr = true })

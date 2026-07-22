@@ -1,5 +1,9 @@
 {
   "plugins": {
+    "chalk-nvim": {
+      "rev": "43ca74a6091003f5bb63a6583d8cf443aa8775c7",
+      "src": "https://github.com/chalk-ai/chalk-nvim"
+    },
     "conform.nvim": {
       "rev": "dca1a190aa85f9065979ef35802fb77131911106",
       "src": "https://github.com/stevearc/conform.nvim"
@@ -40,6 +44,10 @@
     "which-key.nvim": {
       "rev": "3aab2147e74890957785941f0c1ad87d0a44c15a",
       "src": "https://github.com/folke/which-key.nvim"
+    },
+    "yanky.nvim": {
+      "rev": "dd6689fdda85f66cab7d9b1a1664625f3be0920d",
+      "src": "https://github.com/gbprod/yanky.nvim"
     },
     "zellij-nav.nvim": {
       "rev": "91cc2a642d8927ebde50ced5bf71ba470a0fc116",
