@@ -72,6 +72,9 @@ keybinds clear-defaults=true {
         bind "[" { SwitchToMode "scroll"; }
         bind "=" { SwitchToMode "scroll"; }
         bind "f" { SwitchToMode "entersearch"; SearchInput 0; }
+
+        // Open this pane's scrollback in nvim directly (shortcut for [ then e).
+        bind "E" { EditScrollback; SwitchToMode "normal"; }
     }
 
     resize {

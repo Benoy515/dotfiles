@@ -1,5 +1,14 @@
 local opt = vim.opt
 
+-- Disable unused language providers. These only exist for plugins written IN
+-- these languages (remote plugins); LSP/treesitter/completion don't use them.
+-- The python3 provider in particular shelled out to detect a pynvim host on
+-- every .py open, adding ~65ms to startup.
+vim.g.loaded_python3_provider = 0
+vim.g.loaded_ruby_provider = 0
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_node_provider = 0
+
 opt.number = true
 opt.relativenumber = true
 
