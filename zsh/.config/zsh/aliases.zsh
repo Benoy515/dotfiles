@@ -13,8 +13,10 @@ alias add-alias='nvim ~/.config/zsh/aliases.zsh'
 alias ls='ls -aG'
 alias cd='z'
 alias ..='cd ..'
-alias md='mkdir'
 alias rd='rmdir'
+md() {
+  mkdir -p "$1" && cd "$1"  
+}
 
 # Git aliases
 alias g='git'
@@ -29,10 +31,13 @@ alias gb='git branch | fzf | xargs git switch'
 # Rust aliases
 alias cr='cargo run'
 alias ct='cargo test'
+alias cb='cargo build'
 
 # Python venv
 alias va='source .venv/bin/activate'
 
 # Personal CLI tools
 alias alist='/Users/abhaybenoy/Main-Files/Hacking/Rust_Projects/alist/target/release/alist'
-
+wire() {
+  ssh -p 2220 "bandit$1@bandit.labs.overthewire.org"
+}
