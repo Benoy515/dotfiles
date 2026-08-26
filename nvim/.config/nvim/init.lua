@@ -16,5 +16,6 @@ require("config.whichkey")
 require("config.conform")
 require("config.zellij-nav")
 require("config.yank")
+require("config.harpoon")
 
 require("autocmds")

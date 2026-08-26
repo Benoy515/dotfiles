@@ -12,4 +12,6 @@ vim.pack.add({
   { src = "https://github.com/swaits/zellij-nav.nvim" },
   { src = "https://github.com/chalk-ai/chalk-nvim" },
   { src = "https://github.com/gbprod/yanky.nvim" },
+  { src = "https://github.com/nvim-lua/plenary.nvim" },
+  { src = "https://github.com/ThePrimeagen/harpoon", version = "harpoon2" },
 })

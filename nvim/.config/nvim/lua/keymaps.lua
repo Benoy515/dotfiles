@@ -5,9 +5,17 @@ map("n", "<Esc>", "<cmd>nohlsearch<CR>")
 map("n", "<leader>w", "<cmd>write<CR>", { desc = "Save" })
 map("n", "<leader>q", "<cmd>quit<CR>", { desc = "Quit" })
 
+-- <C-^> toggles between the current and the previously-edited buffer. Great
+-- motion, unreachable key (it's really Ctrl-Shift-6).
+map("n", "<leader><leader>", "<C-^>", { desc = "Last buffer" })
+
 map("n", "n", "nzzzv")
 map("n", "N", "Nzzzv")
 map("n", "J", "mzJ`z")
+
+-- H/L jump to line start/end (shadows screen-top/bottom motions).
+map({ "n", "x", "o" }, "H", "^", { desc = "First non-blank char" })
+map({ "n", "x", "o" }, "L", "$", { desc = "End of line" })
 
 map("v", "<", "<gv")
 map("v", ">", ">gv")
