@@ -53,6 +53,18 @@ vim.keymap.set({ "n", "x" }, "P", "<Plug>(YankyPutBefore)", { desc = "Put before
 vim.keymap.set({ "n", "x" }, "gp", "<Plug>(YankyGPutAfter)", { desc = "Put after (cursor past)" })
 vim.keymap.set({ "n", "x" }, "gP", "<Plug>(YankyGPutBefore)", { desc = "Put before (cursor past)" })
 
+-- Paste the last *yank* specifically. Register 0 only ever receives yanks, so
+-- this survives an intervening delete/change (which clobber the unnamed
+-- register that plain `p` reads). remap=true is required for the <Plug> rhs.
+vim.keymap.set("n", "<leader>p", '"0<Plug>(YankyPutAfter)',
+  { remap = true, desc = "Paste last yank" })
+vim.keymap.set("n", "<leader>P", '"0<Plug>(YankyPutBefore)',
+  { remap = true, desc = "Paste last yank (before)" })
+-- Over a selection, PutBefore is the register-preserving variant (:h v_P);
+-- both replace the selection identically.
+vim.keymap.set("x", "<leader>p", '"0<Plug>(YankyPutBefore)',
+  { remap = true, desc = "Paste last yank over selection" })
+
 -- Yank through yanky so it records into the ring.
 vim.keymap.set({ "n", "x" }, "y", "<Plug>(YankyYank)", { desc = "Yank" })
 

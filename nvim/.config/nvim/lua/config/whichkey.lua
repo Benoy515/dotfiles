@@ -6,6 +6,7 @@ wk.add({
   { "<leader>f", group = "find" },
   { "<leader>h", group = "hunks" },
   { "<leader>l", group = "lsp" },
+  { "<leader>lc", group = "chalk" },
   { "<leader>m", group = "harpoon" },
   { "<leader>t", group = "toggle" },
   -- Harpoon slots are pure muscle memory; keep them out of the popup.
