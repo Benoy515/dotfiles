@@ -17,6 +17,7 @@ alias rd='rmdir'
 md() {
   mkdir -p "$1" && cd "$1"
 }
+alias cc='claude'
 
 # Git aliases
 alias g='git'
