@@ -48,6 +48,12 @@ opt.mouse = "a"
 opt.clipboard = ""
 
 opt.completeopt = "menu,menuone,noselect,fuzzy,popup"
+-- Open the completion menu as you type, not just on LSP trigger chars like `.`.
+-- Sources: o = omnifunc (LSP once attached), . = current buffer, w = other
+-- windows, b = other loaded buffers. ^N caps word sources so LSP stays on top.
+opt.autocomplete = true
+opt.autocompletedelay = 100
+opt.complete = "o,.^5,w^5,b^3"
 
 vim.diagnostic.config({
   virtual_text = { spacing = 2, prefix = "●" },

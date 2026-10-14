@@ -27,3 +27,13 @@ vim.keymap.set("i", "<CR>", function()
   end
   return "<CR>"
 end, { expr = true })
+
+-- Cycle through the completion menu (wraps at either end); accepting is left
+-- to <CR>. Outside the menu, both keys keep their normal behavior.
+vim.keymap.set("i", "<Tab>", function()
+  return vim.fn.pumvisible() == 1 and "<C-n>" or "<Tab>"
+end, { expr = true })
+
+vim.keymap.set("i", "<S-Tab>", function()
+  return vim.fn.pumvisible() == 1 and "<C-p>" or "<S-Tab>"
+end, { expr = true })
