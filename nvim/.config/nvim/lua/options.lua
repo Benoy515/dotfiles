@@ -42,6 +42,12 @@ opt.wrap = false
 opt.linebreak = true
 
 opt.mouse = "a"
+-- One line per wheel event. Trackpads emit a stream of small events; at the
+-- default 3 lines each, mini.animate would start a fresh 125ms scroll
+-- animation per event, making scrolling feel laggy and rubbery. mini.animate
+-- skips animating scrolls of 1 line, so this also makes mouse scrolling
+-- instant while keeping animation for <C-d>/<C-u>.
+opt.mousescroll = "ver:1,hor:1"
 -- Left empty on purpose: `unnamedplus` would route every register write
 -- (yanks AND deletes/changes) to the system clipboard. Instead we mirror only
 -- explicit yanks to `+` in config/yank.lua, so deletes/changes stay Vim-local.
