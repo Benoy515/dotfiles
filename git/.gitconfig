@@ -6,11 +6,18 @@
 	postBuffer = 157286400
 [core]
 	editor = code --wait
+	pager = delta
 [merge]
 	tool = vscode
+	conflictStyle = zdiff3
 [mergetool "vscode"]
 	cmd = "code --wait "
 [diff]
 	tool = vscode
 [difftool "vscode"]
 	cmd = "code --wait --diff  "
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true
+	line-numbers = true

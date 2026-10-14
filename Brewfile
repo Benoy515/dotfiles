@@ -21,6 +21,7 @@ brew "neovim"        # >= 0.12 required for vim.pack
 brew "fzf"
 brew "fd"
 brew "bat"
+brew "git-delta"     # syntax-highlighted pager for git diff/log/show
 brew "ripgrep"
 
 # Apps
